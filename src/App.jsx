@@ -8,7 +8,13 @@ function App() {
     
     try {
       // Node.js'teki 5000 portuna kurye yolluyoruz
-      const cevap = await fetch('http://localhost:5000/api/mesaj-kaydet', {
+       try {
+      // Node.js'teki 5000 portuna kurye yolluyoruz
+      const cevap = await fetch('http://80.253.255.197:5001/api/mesaj-kaydet', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mesaj: 'Merhaba MongoDB! Ben React. Gökhan gönderdi.' })
+      });
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mesaj: 'Merhaba MongoDB! Ben React. Gökhan gönderdi.' })
