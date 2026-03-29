@@ -7,14 +7,8 @@ function App() {
     setDurum('⏳ Sunucuya iletiliyor...');
     
     try {
-      // Node.js'teki 5000 portuna kurye yolluyoruz
-       try {
-      // Node.js'teki 5000 portuna kurye yolluyoruz
+      // Hedefi senin canlı VPS IP adresin ve yeni 5001 portun olarak güncelledik!
       const cevap = await fetch('http://80.253.255.197:5001/api/mesaj-kaydet', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mesaj: 'Merhaba MongoDB! Ben React. Gökhan gönderdi.' })
-      });
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mesaj: 'Merhaba MongoDB! Ben React. Gökhan gönderdi.' })
@@ -26,7 +20,7 @@ function App() {
         setDurum('✅ ' + veri.sonuc);
       }
     } catch (hata) {
-      setDurum('❌ Hata: Node.js kapalı olabilir.');
+      setDurum('❌ Hata: Node.js kapalı veya Güvenlik Duvarı engelliyor.');
     }
   }
 
